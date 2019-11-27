@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<style>
+table.table1 {
+     border-top-style: dotted;
+     border-right-style: solid;
+     border-bottom-style: dotted;
+     border-left-style: solid;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 40%;
+ }
+</style>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Show Students</title>
+</head>
+<body>
+<table class = "table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="student: ${students}">
+                <td  scope ="row" th:text="${student.id}" />
+                <td  scope ="row" th:text="${student.firstName}" />
+                <td scope ="row" th:text="${student.lastName}" />
+        </tr>
+    </tbody>
+</table>
+    <div>
+        <table class="table1">
+            <tr>
+                <td><a href="addStudent">Dodaj Studenta</a></td>
+            </tr>
+            <tr>
+                <td><a href="updateStudent">Zaktualizuj informacje o Studencie</a></td>
+            </tr>
+            <tr>
+                <td><a href="deleteStudent">Usun Studenta</a></td>
+            </tr>
+            <tr>
+                <td><a href="findStudent">Znajdz Studenta po Imieniu</a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
